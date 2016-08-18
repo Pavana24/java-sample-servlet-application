@@ -1,0 +1,27 @@
+nginx:
+    image: nginx
+    links:
+        - tomcat:tomcat
+    ports:
+        - 80:80
+        - 443:443
+    volumes:
+        - ./docker/nginx/vhosts:/etc/nginx/conf.d
+        - ./docker/nginx/config/nginx.conf:/etc/nginx/nginx.conf:ro
+
+tomcat:
+    image: tomcat:7
+    links:
+        - mysql:mysql
+    ports:
+        - 8080:8080
+    volumes:
+        - ./docker/tomcat/conf/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml:ro
+        - ./docker/tomcat/conf/context.xml:/usr/local/tomcat/conf/context.xml:ro
+
+mysql:
+    image: mysql
+    ports:
+        - 3306:3306
+    environment:
+        MYSQL_ROOT_PASSWORD: root
