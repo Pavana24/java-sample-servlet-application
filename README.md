@@ -1,6 +1,6 @@
 Java Sample Application
 ------------------------------------------------------------
-A sample application with user login/logout with sessions and MySQL database.
+A sample application with user login/logout, sessions and MySQL database.
 
 Used technologies:
 - Maven
