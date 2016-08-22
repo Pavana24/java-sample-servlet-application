@@ -13,7 +13,6 @@ public class HomeController extends AbstractController {
         HttpServletRequest request,
         HttpServletResponse response
     ) throws ServletException, IOException {
-
         this.renderer.dispatcherFor("/WEB-INF/templates/home.twig.html").render(request, response);
     }
 }

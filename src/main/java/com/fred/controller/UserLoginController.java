@@ -17,7 +17,6 @@ public class UserLoginController extends AbstractController {
         HttpServletRequest request,
         HttpServletResponse response
     ) throws ServletException, IOException {
-
         this.renderer.dispatcherFor("/WEB-INF/templates/user/login.twig.html").render(request, response);
     }
 

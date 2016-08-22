@@ -13,7 +13,6 @@ public class UserController extends AbstractController {
         HttpServletRequest request,
         HttpServletResponse response
     ) throws ServletException, IOException {
-
         if (this.checkUserAuthentication(request, response)) {
             this.renderer.dispatcherFor("/WEB-INF/templates/user/index.twig.html").render(request, response);
         }

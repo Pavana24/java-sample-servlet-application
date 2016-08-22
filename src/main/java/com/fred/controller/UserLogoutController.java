@@ -14,7 +14,6 @@ public class UserLogoutController extends AbstractController {
         HttpServletRequest request,
         HttpServletResponse response
     ) throws ServletException, IOException {
-
         // Destroy session and redirect to home
         HttpSession session = request.getSession();
         session.invalidate();
